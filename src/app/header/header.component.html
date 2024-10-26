@@ -1,0 +1,10 @@
+<header>
+    <div class="profile" (click)="toggleMenu()">☰ Profile</div>
+    <nav *ngIf="menuOpen" class="menu">
+      <a routerLink="/dashboard" (click)="toggleMenu()">Dashboard</a>
+      <a routerLink="/asset" (click)="toggleMenu()">Add Investment</a>
+      <a routerLink="/track-investments" (click)="toggleMenu()">Track Investments</a>
+      <a routerLink="/market-trends" (click)="toggleMenu()">Market Trends</a>
+    </nav>
+    <div class="logo">Logo</div>
+  </header>

@@ -1,0 +1,25 @@
+[
+    {
+      "name": "Portfolio",
+      "series": [
+        { "name": "January", "value": 120 },
+        { "name": "February", "value": 150 },
+        { "name": "March", "value": 200 },
+        { "name": "April", "value": 220 },
+        { "name": "May", "value": 170 },
+        { "name": "June", "value": 250 }
+      ]
+    },
+    {
+      "name": "Benchmark",
+      "series": [
+        { "name": "January", "value": 130 },
+        { "name": "February", "value": 140 },
+        { "name": "March", "value": 180 },
+        { "name": "April", "value": 210 },
+        { "name": "May", "value": 160 },
+        { "name": "June", "value": 240 }
+      ]
+    }
+  ]
+  

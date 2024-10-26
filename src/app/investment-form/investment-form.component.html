@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Input Investment Details</h2>
+    <form [formGroup]="investmentForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="assetType" class="form-label">Asset Type</label>
+        <input id="assetType" formControlName="assetType" class="form-control" placeholder="Enter asset type" required>
+        <div *ngIf="investmentForm.controls.assetType.invalid && investmentForm.controls.assetType.touched" class="invalid-feedback">
+          Asset type is required.
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input id="quantity" formControlName="quantity" class="form-control" placeholder="Enter quantity" type="number" required>
+        <div *ngIf="investmentForm.controls.quantity.invalid && investmentForm.controls.quantity.touched" class="invalid-feedback">
+          Quantity must be greater than 0.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="purchasePrice" class="form-label">Purchase Price</label>
+        <input id="purchasePrice" formControlName="purchasePrice" class="form-control" placeholder="Enter purchase price" type="number" required>
+        <div *ngIf="investmentForm.controls.purchasePrice.invalid && investmentForm.controls.purchasePrice.touched" class="invalid-feedback">
+          Purchase price must be greater than 0.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="purchaseDate" class="form-label">Purchase Date</label>
+        <input id="purchaseDate" formControlName="purchaseDate" type="date" class="form-control" required>
+        <div *ngIf="investmentForm.controls.purchaseDate.invalid && investmentForm.controls.purchaseDate.touched" class="invalid-feedback">
+          Purchase date is required.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="investmentForm.invalid">Submit</button>
+    </form>
+
+    <app-confirmation-popup *ngIf="showConfirmation" [data]="investmentForm.value" (confirmed)="onConfirmed($event)"></app-confirmation-popup>
+    <app-success-alert *ngIf="showSuccessAlert" (closeSuccess)="onCloseSuccessAlert()"></app-success-alert>
+  </div>

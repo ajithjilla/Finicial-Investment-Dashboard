@@ -1,0 +1,27 @@
+<div class="track-inv-container">
+    <h2>Track Investment</h2>
+    <div *ngIf="investments.length > 0; else loading">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Profit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let investment of investments">
+            <td>{{ investment.id }}</td>
+            <td>{{ investment.name }}</td>
+            <td>{{ investment.amount |  currency: 'INR': 'symbol': '1.2-2' }}</td>
+            <td>{{ investment.profit |  currency: 'INR': 'symbol': '1.2-2' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #loading>
+      <p>Loading market trends...</p>
+    </ng-template>
+  </div>
+

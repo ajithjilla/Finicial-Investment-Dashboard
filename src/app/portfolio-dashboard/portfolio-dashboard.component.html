@@ -1,0 +1,36 @@
+<div class="dashboard">
+    <h2>Portfolio Overview</h2>
+    <div class="top-section">
+      <div class="left-chart">
+        <ngx-charts-pie-chart
+          [view]="[400, 400]"
+          [results]="assetAllocation"
+          [legend]="true"
+          [doughnut]="false">
+        </ngx-charts-pie-chart>
+      </div>
+      <div class="right-chart">
+        <ngx-charts-line-chart
+          [view]="[700, 400]"
+          [results]="performanceData"
+          [xAxis]="true"
+          [yAxis]="true"
+          [legend]="false"
+          [showXAxisLabel]="true"
+          [showYAxisLabel]="true"
+          [xAxisLabel]="'Months'"
+          [yAxisLabel]="'Performance'">
+        </ngx-charts-line-chart>
+      </div>
+    </div>
+  
+    <div class="bottom-section">
+      <div class="left-chart">
+        <app-market-trends></app-market-trends>
+      </div>
+      <div class="right-chart">
+        <app-track-investments></app-track-investments>
+      </div>
+    </div>
+  </div>
+  
